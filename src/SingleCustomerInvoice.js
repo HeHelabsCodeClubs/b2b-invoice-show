@@ -2,7 +2,7 @@ import _ from 'lodash';
 import React, { Component } from 'react';
 import ReactTable from 'react-table';
 //import Jumbo from '../../reusable/Jumbo';
-import { CLOUDINARY_URL } from '../../../../config';
+//import { CLOUDINARY_URL } from '../../../../config';
 // import Loader from '../common/loader';
 
 class SingleCustomerInvoice extends Component {
@@ -93,7 +93,7 @@ class SingleCustomerInvoice extends Component {
 
                     <div className="col-md-6 col-xs-6">
                       <div className="invoiceDetsTitle">Customer</div>
-                      <div><Jumbo image={`${CLOUDINARY_URL}/HeHe_LOGO_Original_Landscape-small`} addc='client-logo' /></div>
+                      {/* <div><Jumbo image={`${CLOUDINARY_URL}/HeHe_LOGO_Original_Landscape-small`} addc='client-logo' /></div> */}
                     </div>
                     <div className="col-md-6 col-xs-6">
                       <div className="invoiceDetsBold">{consolidatedInvoiceData.customer.customer}</div>

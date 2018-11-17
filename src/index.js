@@ -7,7 +7,7 @@ class InvoiceShow extends Component {
     render() {
         const { invoicesList, onLoad } = this.props;
         return (
-            <div>
+            <div className="row invoice-display-container">
                 {/* ********** Invoices Quick View List ************ */}
                 <div className="col-md-4 col-sm-4 col-xs-12">
                     <DeliveryNotesList invoicesData={invoicesList} loader={onLoad} />

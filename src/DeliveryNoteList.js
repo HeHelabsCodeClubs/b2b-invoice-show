@@ -1,17 +1,34 @@
-import _ from 'lodash';
 import React, { Component } from 'react';
+import SingleOrderInfo from './SingleOrderInfo';
 
 class DeliveryNotesList extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            orderToDisplay: {}
+        };
         this.renderInvoices = this.renderInvoices.bind(this);
-    }   
+        this.deliveryNoteDisplay = this.deliveryNoteDisplay.bind(this);
+    }
+
+    deliveryNoteDisplay(order, e) {
+        e.preventDefault();
+        this.setState({
+            orderToDisplay: order
+        });
+    } 
 
     renderInvoices(invoices) {
         if (!_.isEmpty(invoices)) {
             const invoicesList = invoices.map((item) => {
+                const order = item.order.data;
+                const showDeliveryNoteClick = this.deliveryNoteDisplay.bind(this, order);
                 return (
-                    <a href="#" key={item.id}>
+                    <a 
+                    href="#" 
+                    key={item.id}
+                    onClick={showDeliveryNoteClick}
+                    >
                         <div className="invoiceNumQuickView">
                         <div className="row">
                             <div className="col-md-6 col-xs-6">
@@ -36,7 +53,7 @@ class DeliveryNotesList extends Component {
     }
     
     render() {
-        const { invoicesData } = this.props;
+        const { invoicesData, loader } = this.props;
         return (
             <div className="invoiceQuickView">
                 <div className="quickViewTitle">Delivery notes</div>
@@ -46,6 +63,7 @@ class DeliveryNotesList extends Component {
                         <button type="cancel" className="cancel">Expand Table</button>
                     </span>
                 </div>
+                <SingleOrderInfo order={orderToDisplay} loader={loader}/>
             </div>
         );
     }

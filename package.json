@@ -1,6 +1,6 @@
 {
   "name": "invoice-show",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "\"a component to render single business invoice\"",
   "main": "dist/index.js",
   "scripts": {
@@ -34,5 +34,8 @@
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10"
   },
-  "dependencies": {}
+  "dependencies": {
+    "lodash.isempty": "^4.4.0",
+    "react-responsive-modal": "^3.5.1"
+  }
 }

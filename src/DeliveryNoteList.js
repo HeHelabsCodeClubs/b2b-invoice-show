@@ -54,6 +54,7 @@ class DeliveryNotesList extends Component {
     
     render() {
         const { invoicesData, loader } = this.props;
+        const { orderToDisplay } = this.state;
         return (
             <div className="invoiceQuickView">
                 <div className="quickViewTitle">Delivery notes</div>
